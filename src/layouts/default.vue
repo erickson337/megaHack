@@ -11,7 +11,7 @@
           @click="leftDrawer = !leftDrawer"
         />
         <q-toolbar-title>
-          Produtos
+          GeekTec
         </q-toolbar-title>
       </q-toolbar>
     </q-header>

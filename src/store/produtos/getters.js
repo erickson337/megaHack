@@ -1,7 +1,7 @@
-export function getProdutos (state) {
+export function GET_PRODUTOS (state) {
   return state.produtos
 }
 
-export function getProduto (state) {
+export function GET_PRODUTO (state) {
   return state.produto
 }
