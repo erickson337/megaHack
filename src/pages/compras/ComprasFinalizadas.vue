@@ -13,7 +13,7 @@
             </div>
           </q-card-section>
           <q-card-actions align="center">
-            <q-rating v-model="produto.avaliacao" size="2.5em" :max="5" color="yellow-6" icon="star_border" icon-selected="star" />
+            <q-rating v-model="produto.avaliacao" size="2.5em" :max="5" color="yellow-6" icon="star_border" icon-selected="star" @input="changeValue($event, index)"/>
           </q-card-actions>
         </q-card>
       </div>
@@ -24,12 +24,14 @@
 <script>
 export default {
   name: 'compras',
-  created () {
-    this.data = [...this.$store.getters['compras/GET_COMPRAS']]
-  },
   data () {
     return {
-      data: []
+      data: this.$store.getters['compras/GET_COMPRAS'].map(a => ({ ...a }))
+    }
+  },
+  methods: {
+    changeValue (props, index) {
+      this.$store.state.compras.compras[index].avaliacao = props
     }
   }
 }
