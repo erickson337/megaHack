@@ -11,8 +11,22 @@ const routes = [
     path: '/produtos',
     component: () => import('layouts/Default.vue'),
     children: [
-      { path: '', component: () => import('pages/produtos/Index.vue') },
-      { path: ':id/compras', component: () => import('pages/produtos/Compras.vue') }
+      { path: '', component: () => import('pages/produtos/Index.vue') }
+    ]
+  },
+  {
+    path: '/compras',
+    component: () => import('layouts/Default.vue'),
+    children: [
+      { path: 'produto/:id', component: () => import('pages/compras/Index.vue') },
+      { path: 'finalizadas', component: () => import('pages/compras/ComprasFinalizadas.vue') }
+    ]
+  },
+  {
+    path: '/ranking',
+    component: () => import('layouts/Default.vue'),
+    children: [
+      { path: '', component: () => import('pages/ranking/Index.vue') }
     ]
   }
 ]

@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import produtos from './produtos'
+import usuario from './usuario'
+import compras from './compras'
+import ranking from './ranking'
 
 Vue.use(Vuex)
 
@@ -17,7 +20,10 @@ Vue.use(Vuex)
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      produtos
+      produtos,
+      usuario,
+      compras,
+      ranking
     },
 
     // enable strict mode (adds overhead!)

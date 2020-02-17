@@ -11,7 +11,10 @@
           @click="leftDrawer = !leftDrawer"
         />
         <q-toolbar-title>
-          GeekTec
+          <div class="row justify-between">
+            <div><span> GeekTec </span></div>
+            <div><span> E-coins: {{pontos}} <q-icon style="margin-top: -3px" name="monetization_on" size="sm" color="yellow-12"/></span> </div>
+          </div>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -59,6 +62,18 @@ const menuList = [
     to: '/produtos'
   },
   {
+    icon: 'loyalty',
+    label: 'Compras realizadas',
+    separator: true,
+    to: '/compras/finalizadas'
+  },
+  {
+    icon: 'list_alt',
+    label: 'Ranking',
+    separator: true,
+    to: '/ranking'
+  },
+  {
     icon: 'exit_to_app',
     label: 'Sair',
     separator: false,
@@ -71,6 +86,11 @@ export default {
     return {
       leftDrawer: true,
       menuList
+    }
+  },
+  computed: {
+    pontos () {
+      return this.$store.getters['usuario/GET_PONTOS']
     }
   }
 }

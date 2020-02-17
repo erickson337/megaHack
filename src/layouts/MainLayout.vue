@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-toolbar-title>
           <q-icon name="gamepad" />
-          GeekTec
+          <span> GeekTec </span>
         </q-toolbar-title>
 
         <div>{{ dateCurrent }}</div>

@@ -2,7 +2,7 @@
   <q-page padding>
     <template>
       <div class="column q-gutter-md">
-        <q-card v-for="(produto, index) in data" :key="index">
+         <q-card v-for="(produto, index) in data" :key="index">
           <img :src="produto.url" />
           <q-card-section horizontal class="q-pt-md q-pl-md q-pr-md">
             <div class="col-6 text-left">
@@ -12,10 +12,8 @@
               <span> R$ {{produto.preco.toFixed(2)}} </span>
             </div>
           </q-card-section>
-          <q-card-actions align="right">
-            <q-btn flat round color="red" :icon="produto.like ? 'favorite' : 'favorite_border' " @click="produto.like = !produto.like"/>
-            <q-btn flat round color="teal" icon="shopping_cart" :to="`/compras/produto/${index}`"/>
-            <q-btn flat round color="primary" icon="share" />
+          <q-card-actions align="center">
+            <q-rating v-model="produto.avaliacao" size="2.5em" :max="5" color="yellow-6" icon="star_border" icon-selected="star" @input="changeValue($event, index)"/>
           </q-card-actions>
         </q-card>
       </div>
@@ -25,13 +23,15 @@
 
 <script>
 export default {
-  name: 'produtos',
-  created () {
-    this.data = this.$store.getters['produtos/GET_PRODUTOS'].slice()
-  },
+  name: 'compras',
   data () {
     return {
-      data: []
+      data: this.$store.getters['compras/GET_COMPRAS'].map(a => ({ ...a }))
+    }
+  },
+  methods: {
+    changeValue (props, index) {
+      this.$store.state.compras.compras[index].avaliacao = props
     }
   }
 }

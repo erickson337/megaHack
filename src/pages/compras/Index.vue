@@ -13,7 +13,7 @@
             </div>
           </q-card-section>
           <q-card-actions align="around">
-            <q-btn flat color="primary" @click="comprar">Comprar</q-btn>
+            <q-btn flat color="primary" @click="comprar(data)">Comprar</q-btn>
             <q-btn flat color="negative" @click="$router.go(-1)">Cancelar</q-btn>
           </q-card-actions>
         </q-card>
@@ -35,20 +35,19 @@ export default {
     }
   },
   methods: {
-    comprar () {
-      this.message('Confirmar compra', 'Deseja confirmar a compra?', true)
-    },
-    message (title, message, confirm = false) {
+    comprar (data) {
       this.$q.dialog({
-        title: title,
-        message: message,
-        cancel: confirm
+        title: 'Confirmar compra',
+        message: 'Deseja confirmar a compra?',
+        cancel: true
       }).onOk(() => {
         this.$q.notify({
           color: 'positive',
           message: 'Parabéns, sua compra foi finalizada com sucesso!'
         })
-        this.$router.push('/')
+        this.$store.dispatch('usuario/atualizaPontos')
+        this.$store.dispatch('compras/store', data)
+        this.$router.push('/produtos')
       })
     }
   }
