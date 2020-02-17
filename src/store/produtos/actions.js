@@ -1,2 +1,3 @@
-export function listarProdutos ({ commit }, payload) {
+export function findById ({ commit, state }, payload) {
+  commit('SET_PRODUTO', state.produtos[payload])
 }

@@ -9,9 +9,10 @@ const routes = [
   },
   {
     path: '/produtos',
-    component: () => import('layouts/default.vue'),
+    component: () => import('layouts/Default.vue'),
     children: [
-      { path: '', component: () => import('pages/produtos/Index.vue') }
+      { path: '', component: () => import('pages/produtos/Index.vue') },
+      { path: ':id/compras', component: () => import('pages/produtos/Compras.vue') }
     ]
   }
 ]

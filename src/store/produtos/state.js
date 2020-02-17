@@ -9,7 +9,7 @@ export default function () {
         url: 'statics/images/bath-oil-2510793_640.jpg'
       },
       {
-        nome_produto: 'Yogurte',
+        nome_produto: 'Iogurte',
         preco: 5.00,
         like: false,
         desconto: 0.00,
