@@ -1,6 +1,10 @@
 export default function () {
   return {
     pontos: 10,
-    usuario: Object
+    usuario: {
+      nome: 'Fulano',
+      xp: 0,
+      lvl: 1
+    }
   }
 }

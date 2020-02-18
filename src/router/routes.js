@@ -15,6 +15,13 @@ const routes = [
     ]
   },
   {
+    path: '/perfil',
+    component: () => import('layouts/Default.vue'),
+    children: [
+      { path: '', component: () => import('pages/perfil/Index.vue') }
+    ]
+  },
+  {
     path: '/compras',
     component: () => import('layouts/Default.vue'),
     children: [
