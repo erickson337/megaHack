@@ -7,7 +7,7 @@
             <img src="https://www.materialui.co/materialIcons/action/account_circle_black_108x108.png">
           </q-avatar>
         </q-item-section>
-        <q-item-section>Fulano
+        <q-item-section>{{nome}}
           <q-chip outline color="orange" text-color="white" icon-right="star">
             LV:6  EXP:959626
           </q-chip>
@@ -96,12 +96,13 @@
 <script>
 export default {
   name: 'perfil',
-  created () {
-    // this.data = this.$store.getters['produtos/GET_PRODUTOS'].slice()
+  mounted () {
+    this.nome = this.$store.getters['usuario/GET_NOME']
+    console.log(this.nome)
   },
   data () {
     return {
-      data: []
+      nome: ''
     }
   }
 }
