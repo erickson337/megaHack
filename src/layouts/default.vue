@@ -13,7 +13,23 @@
         <q-toolbar-title>
           <div class="row justify-between">
             <div><span> GeekTec </span></div>
-            <div><span> E-coins: {{pontos}} <q-icon style="margin-top: -3px" name="monetization_on" size="sm" color="yellow-12"/></span> </div>
+            <div>
+              <span>
+                <q-icon style="margin-top: -3px" name="monetization_on" size="sm" color="white"/>{{pontos}}
+              </span>
+              <span>
+                <!-- <q-icon style="margin-top: -3px" name="account_circle" size="sm" color="white"/> -->
+                <q-btn-dropdown icon="account_circle">
+                  <q-list>
+                    <q-item clickable v-close-popup to="/perfil/index">
+                      <q-item-section>
+                        <q-item-label>Seu perfil</q-item-label>
+                      </q-item-section>
+                    </q-item>
+                  </q-list>
+                </q-btn-dropdown>
+              </span>
+            </div>
           </div>
         </q-toolbar-title>
       </q-toolbar>
@@ -84,7 +100,7 @@ export default {
   name: 'produtoLayout',
   data () {
     return {
-      leftDrawer: true,
+      leftDrawer: false,
       menuList
     }
   },
