@@ -19,7 +19,7 @@
               </span>
               <span>
                 <!-- <q-icon style="margin-top: -3px" name="account_circle" size="sm" color="white"/> -->
-                <q-btn-dropdown icon="account_circle">
+                <q-btn-dropdown flat icon="account_circle">
                   <q-list>
                     <q-item clickable v-close-popup to="/perfil/index">
                       <q-item-section>
