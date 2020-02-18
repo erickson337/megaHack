@@ -90,6 +90,18 @@ const menuList = [
     to: '/ranking'
   },
   {
+    icon: 'widgets',
+    label: 'Resgatar pontos',
+    separator: true,
+    to: '/trocar-pontos'
+  },
+  {
+    icon: 'favorite',
+    label: 'Itens adquiridos',
+    separator: true,
+    to: '/trocar-pontos/itens-adquiridos'
+  },
+  {
     icon: 'exit_to_app',
     label: 'Sair',
     separator: false,

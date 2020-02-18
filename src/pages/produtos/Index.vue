@@ -16,6 +16,7 @@
             <q-btn flat round color="red" :icon="produto.like ? 'favorite' : 'favorite_border' " @click="produto.like = !produto.like"/>
             <q-btn flat round color="teal" icon="shopping_cart" :to="`/compras/produto/${index}`"/>
             <q-btn flat round color="primary" icon="share" />
+            <q-btn flat round color="primary" icon="help" to="/regras" />
           </q-card-actions>
         </q-card>
       </div>
