@@ -5,6 +5,7 @@ import produtos from './produtos'
 import usuario from './usuario'
 import compras from './compras'
 import ranking from './ranking'
+import trocarPontos from './trocar_pontos'
 
 Vue.use(Vuex)
 
@@ -23,7 +24,8 @@ export default function (/* { ssrContext } */) {
       produtos,
       usuario,
       compras,
-      ranking
+      ranking,
+      trocarPontos
     },
 
     // enable strict mode (adds overhead!)

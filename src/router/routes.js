@@ -30,10 +30,25 @@ const routes = [
     ]
   },
   {
+    path: '/regras',
+    component: () => import('layouts/Default.vue'),
+    children: [
+      { path: '', component: () => import('pages/regras/Index.vue') }
+    ]
+  },
+  {
     path: '/ranking',
     component: () => import('layouts/Default.vue'),
     children: [
       { path: '', component: () => import('pages/ranking/Index.vue') }
+    ]
+  },
+  {
+    path: '/trocar-pontos',
+    component: () => import('layouts/Default.vue'),
+    children: [
+      { path: '', component: () => import('pages/trocar_pontos/Index.vue') },
+      { path: 'itens-adquiridos', component: () => import('pages/trocar_pontos/Itens_adquiridos.vue') }
     ]
   }
 ]
